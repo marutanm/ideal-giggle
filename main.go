@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
-	fmt.Printf("Hello, world.")
+	const layout = "2006-01-02"
+
+	base := time.Date(2016, 11, 1, 0, 0, 0, 0, time.Local)
+	fmt.Println(base.Format(layout))
 }
