@@ -13,5 +13,11 @@ func main() {
 	for index := 2; index < 8; index++ {
 		estimate := base.AddDate(0, index, -1)
 		fmt.Println(estimate.Format(layout))
+
+		term := estimate.Sub(base)
+		fmt.Println(term)
+
+		maxTerm := base.Add(time.Duration(term.Hours()*1.5) * time.Hour)
+		fmt.Println("max", maxTerm.Format(layout))
 	}
 }
