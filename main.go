@@ -10,6 +10,7 @@ import (
 func main() {
 	table := tablewriter.NewWriter(os.Stdout)
 	table.SetHeader([]string{"min", "max", "release"})
+	table.SetBorders(tablewriter.Border{Left: true, Top: false, Right: true, Bottom: false})
 
 	const layout = "2006-01-02"
 	base := time.Date(2016, 11, 1, 0, 0, 0, 0, time.Local)
